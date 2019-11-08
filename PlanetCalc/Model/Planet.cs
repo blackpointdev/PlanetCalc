@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlanetCalc.Model
 {
-    class Planet
+    public class Planet
     {
         public int Id { get; private set; }
 
@@ -59,9 +59,11 @@ namespace PlanetCalc.Model
             //TODO
         }
 
-        public Planet(int id, string name, double radius, double mass)
+        public Planet(string name, double radius, double mass)
         {
-            //TODO
+            this.Name = name;
+            this.Radius = radius;
+            this.Mass = mass;
         }
 
         private double CalculateCircularVelocity()
