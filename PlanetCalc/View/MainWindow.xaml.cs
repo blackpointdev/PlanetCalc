@@ -38,12 +38,11 @@ namespace PlanetCalc
             
             InitializeComponent();
             PlanetsList.ItemsSource = items;
-            items.Add(new PlanetListItem { Name = "elo" });
         }
     }
 
     public class PlanetListItem
-    {
+    { 
         public string Name { get; set; }
     }
 }
