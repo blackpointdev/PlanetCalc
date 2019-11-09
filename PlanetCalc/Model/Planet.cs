@@ -56,7 +56,7 @@ namespace PlanetCalc.Model
 
         public Planet()
         {
-            //TODO
+            //TODO Planet parametreless constructor
         }
 
         public Planet(string name, double radius, double mass)
@@ -68,19 +68,19 @@ namespace PlanetCalc.Model
 
         private double CalculateCircularVelocity()
         {
-            //TODO
+            //TODO CalclateCircularVelocity
             return 0;
         }
 
         private double CalculateEscapeVelocity()
         {
-            //TODO
+            //TODO CalculateEscapeVelocity
             return 0;
         }
 
         private double CalculateAccelerationOfGravity()
         {
-            //TODO
+            //TODO CalculateAccelerationOfGravity
             return 0;
         }
 

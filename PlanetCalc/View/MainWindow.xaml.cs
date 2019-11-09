@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PlanetCalc.Model;
 
-namespace PlanetCalc
+namespace PlanetCalc.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -34,14 +34,14 @@ namespace PlanetCalc
                 items.Add(new PlanetListItem { Name = i.Name });
             }
             //List<string> itemsNames = planets.Select(o => o.Name).ToList();
-
             
             InitializeComponent();
+
             PlanetsList.ItemsSource = items;
         }
     }
 
-    public class PlanetListItem
+    class PlanetListItem
     { 
         public string Name { get; set; }
     }
