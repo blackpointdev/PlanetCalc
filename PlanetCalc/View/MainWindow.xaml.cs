@@ -36,15 +36,17 @@ namespace PlanetCalc.View
             // Binding data to my view model
             //TODO Create separate UserControl for list and data display part.
             this.DataContext = mainWindowModel;
+
+            PlanetsList.SelectedIndex = 0;
         }
 
         private void PlanetsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Planet planet = (Planet)PlanetsList.SelectedItem;
 
-            CircularValueLabel.Content = planet.CircularVelocity;
-            EscapeValueLabel.Content = planet.EscapeVelocity;
-            AccelerationValueLabel.Content = planet.AccelerationOfGravity;
+            CircularValueLabel.Content = planet.CircularVelocity + " KM/s";
+            EscapeValueLabel.Content = planet.EscapeVelocity + " KM/s";
+            AccelerationValueLabel.Content = planet.AccelerationOfGravity + " m/s^2";
         }
     }
 }

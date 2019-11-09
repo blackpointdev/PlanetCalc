@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace PlanetCalc.Model
 {
     public class Planet
@@ -49,6 +51,8 @@ namespace PlanetCalc.Model
             }
         }
 
+        private const double _g = 6.67E-11;
+
         public Planet()
         {
             //TODO Planet parametreless constructor
@@ -63,20 +67,17 @@ namespace PlanetCalc.Model
 
         private double CalculateCircularVelocity()
         {
-            //TODO CalclateCircularVelocity
-            return 0;
+            return Math.Round(Math.Sqrt((_g * Mass)/(Radius*1000))/1000, 3);
         }
 
         private double CalculateEscapeVelocity()
         {
-            //TODO CalculateEscapeVelocity
-            return 0;
+            return Math.Round(Math.Sqrt(2)*CircularVelocity, 3);
         }
 
         private double CalculateAccelerationOfGravity()
         {
-            //TODO CalculateAccelerationOfGravity
-            return 0;
+            return Math.Round(_g * (Mass/((Radius*1000+100)* (Radius * 1000 + 100))), 3);
         }
 
     }
