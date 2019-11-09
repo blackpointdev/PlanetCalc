@@ -17,7 +17,7 @@ namespace PlanetCalc.ViewModel
             }
         }
 
-        public void LoadPlanets(DBConnection db)
+        public void LoadPlanets(ref DBConnection db)
         {
             Planets = new ObservableCollection<Planet>(db.FetchData());
         }

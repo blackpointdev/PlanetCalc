@@ -15,7 +15,7 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
 
-        <ListBox Grid.Column="0" Margin="10" Name="PlanetsList" ItemsSource="{Binding Path=Planets}">
+        <ListBox Grid.Column="0" Margin="10" Name="PlanetsList" ItemsSource="{Binding Path=Planets}" SelectionChanged="PlanetsList_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Path=Name}"/>
@@ -63,7 +63,7 @@
                 <Label Grid.Row="4" Grid.Column="0" Name="EscapeLabel" Content="Escape velocity" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
                 
                 <Label Grid.Row="5" Grid.Column="0" Name="AccelerationLabel" Content="Acceleration of gravity" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
-                <Label Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Name="AccelerationValue" Content="20" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
+                <Label Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Name="AccelerationValueLabel" Content="20" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
             </Grid>
 
         </Grid>

@@ -29,13 +29,22 @@ namespace PlanetCalc.View
 
             // MVVM stuff
             MainWindowModel mainWindowModel = new MainWindowModel();
-            mainWindowModel.LoadPlanets(db);
+            mainWindowModel.LoadPlanets(ref db);
             
             InitializeComponent();
 
             // Binding data to my view model
             //TODO Create separate UserControl for list and data display part.
             this.DataContext = mainWindowModel;
+        }
+
+        private void PlanetsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Planet planet = (Planet)PlanetsList.SelectedItem;
+
+            CircularValueLabel.Content = planet.CircularVelocity;
+            EscapeValueLabel.Content = planet.EscapeVelocity;
+            AccelerationValueLabel.Content = planet.AccelerationOfGravity;
         }
     }
 }
