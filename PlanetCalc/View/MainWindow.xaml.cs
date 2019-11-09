@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PlanetCalc.Model;
+using PlanetCalc.ViewModel;
 
 namespace PlanetCalc.View
 {
@@ -26,23 +27,14 @@ namespace PlanetCalc.View
         {
             DBConnection db = new DBConnection("PlanetsRepository.db");
 
-            List<Planet> planets = db.FetchData();
-            List<PlanetListItem> items = new List<PlanetListItem>();
-
-            foreach (var i in planets)
-            {
-                items.Add(new PlanetListItem { Name = i.Name });
-            }
-            //List<string> itemsNames = planets.Select(o => o.Name).ToList();
+            // MVVM stuff
+            MainWindowModel mainWindowModel = new MainWindowModel();
+            mainWindowModel.LoadPlanets(db);
+            Debug.WriteLine(mainWindowModel.Planets[0].Name);
             
             InitializeComponent();
 
-            PlanetsList.ItemsSource = items;
+            this.DataContext = mainWindowModel;
         }
-    }
-
-    class PlanetListItem
-    { 
-        public string Name { get; set; }
     }
 }

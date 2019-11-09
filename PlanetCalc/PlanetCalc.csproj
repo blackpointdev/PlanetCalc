@@ -69,6 +69,7 @@
     <Compile Include="Model\DBConnection.cs" />
     <Compile Include="Model\PlanetData.cs" />
     <Compile Include="Model\Planet.cs" />
+    <Compile Include="ViewModel\MainWindowModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
