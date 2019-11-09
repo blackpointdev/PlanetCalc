@@ -33,7 +33,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="PlanetNameLabel" Content="MERKURY" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="PlanetNameLabel" Content="{Binding SelectedItem.Name, ElementName=PlanetsList}" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
             <Separator Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
 
         </Grid>

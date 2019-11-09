@@ -30,10 +30,11 @@ namespace PlanetCalc.View
             // MVVM stuff
             MainWindowModel mainWindowModel = new MainWindowModel();
             mainWindowModel.LoadPlanets(db);
-            Debug.WriteLine(mainWindowModel.Planets[0].Name);
             
             InitializeComponent();
 
+            // Binding data to my view model
+            //TODO Create separate UserControl for list and data display part.
             this.DataContext = mainWindowModel;
         }
     }
