@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace PlanetCalc.ViewModel
 {
-    class MainWindowModel : INotifyPropertyChanged
+    public class MainWindowModel : INotifyPropertyChanged
     {
         private ObservableCollection<Planet> _planets;
         public ObservableCollection<Planet> Planets

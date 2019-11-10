@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace PlanetCalc.Model
 {
-    class DBConnection
+    public class DBConnection
     {
         private string _path;
         public DBConnection(string path)
@@ -36,10 +36,19 @@ namespace PlanetCalc.Model
 
         public void RemovePlanet(Planet planet)
         {
-            using (var db = new LiteDatabase(_path))
+            using (var db = new LiteDatabase(@_path))
             {
                 var planets = db.GetCollection<Planet>("planets");
                 planets.Delete(planet.Id);
+            }
+        }
+
+        public void AddPlanet(Planet planet)
+        {
+            using (var db = new LiteDatabase(@_path))
+            {
+                var planets = db.GetCollection<Planet>("planets");
+                planets.Insert(planet);
             }
         }
     }

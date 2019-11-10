@@ -57,7 +57,7 @@ namespace PlanetCalc.View
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddPlanetWindow addPlanetWindow = new AddPlanetWindow();
+            AddPlanetWindow addPlanetWindow = new AddPlanetWindow(ref mainWindowModel);
             addPlanetWindow.Show();
         }
 
