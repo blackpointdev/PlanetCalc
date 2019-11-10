@@ -18,17 +18,17 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        
-        <Label Grid.Row="0" Grid.Column="0" Content="Name" Margin="5" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Name" Margin="5" VerticalAlignment="Center" />
         <TextBox Grid.Row="0" Grid.Column="1" Name="NameInput" Height="25" Margin="5" VerticalContentAlignment="Center"/>
 
-        <Label Grid.Row="1" Grid.Column="0" Content="Radius" Margin="5" VerticalAlignment="Center"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Radius" Margin="5" VerticalAlignment="Center" />
         <TextBox Grid.Row="1" Grid.Column="1" Name="RadiusInput" Height="25" Margin="5" VerticalContentAlignment="Center"/>
 
-        <Label Grid.Row="2" Grid.Column="0" Content="Mass" Margin="5" VerticalAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Mass" Margin="5" VerticalAlignment="Center" />
         <TextBox Grid.Row="2" Grid.Column="1" Name="MassInput" Height="25" Margin="5" VerticalContentAlignment="Center"/>
 
-        <Label Grid.Row="3" Grid.Column="1" FontSize="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Content="Inputs support scientific notation (i.e. 2,454E23 is valid)."/>
+        <Label Grid.Row="3" Grid.Column="1" FontSize="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Content="Inputs support scientific notation (i.e. 2,454E23 is valid)." />
 
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="10, 5, 10, 5" HorizontalAlignment="Right">
             <Button Content="Cancel" Name="CancelButton" Width="85" Height="25" Margin="0, 0, 10, 0" Click="CancelButton_Click"/>

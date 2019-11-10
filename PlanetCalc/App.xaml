@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:PlanetCalc"
              Startup="Application_Startup">
     <Application.Resources>
-         
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="FontFamily" Value="Microsoft YaHei UI Light" />
+        </Style>
     </Application.Resources>
 </Application>

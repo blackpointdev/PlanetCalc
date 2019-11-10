@@ -41,7 +41,7 @@
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Name="PlanetNameLabel" Content="{Binding SelectedItem.Name, ElementName=PlanetsList}" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
+            <Label Grid.Row="0" Name="PlanetNameLabel" Content="{Binding SelectedItem.Name, ElementName=PlanetsList}" FontSize="22" />
             <Separator Grid.Row="0" VerticalAlignment="Bottom"/>
             <Grid Grid.Row="1" Margin="10, 30, 10, 0">
                 <Grid.ColumnDefinitions>
@@ -57,20 +57,20 @@
                     <RowDefinition Height="33"/>
                 </Grid.RowDefinitions>
                 
-                <Label Grid.Row="0" Grid.Column="0" Name="RadiusLabel" Content="Radius" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
-                <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Name="RadiusValueLabel" Content="{Binding SelectedItem.Radius, ElementName=PlanetsList}" ContentStringFormat=" {0} KM" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
+                <Label Grid.Row="0" Grid.Column="0" Name="RadiusLabel" Content="Radius" FontSize="18" />
+                <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Name="RadiusValueLabel" Content="{Binding SelectedItem.Radius, ElementName=PlanetsList}" ContentStringFormat=" {0} KM" FontSize="22" />
                 
-                <Label Grid.Row="1" Grid.Column="0" Name="MassLabel" Content="Mass" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
-                <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Name="MassValueLabel" Content="{Binding SelectedItem.Mass, ElementName=PlanetsList}" ContentStringFormat=" {0} KG" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
+                <Label Grid.Row="1" Grid.Column="0" Name="MassLabel" Content="Mass" FontSize="18" />
+                <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Name="MassValueLabel" Content="{Binding SelectedItem.Mass, ElementName=PlanetsList}" ContentStringFormat=" {0} KG" FontSize="22" />
                 
-                <Label Grid.Row="3" Grid.Column="0" Name="OrbitalLabel" Content="Orbital velocity" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
-                <Label Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Name="OrbitalValueLabel" Content="data unavailable" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
+                <Label Grid.Row="3" Grid.Column="0" Name="OrbitalLabel" Content="Orbital velocity" FontSize="18" />
+                <Label Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Name="OrbitalValueLabel" Content="data unavailable" FontSize="22" />
 
-                <Label Grid.Row="4" Grid.Column="0" Name="EscapeLabel" Content="Escape velocity" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
-                <Label Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Name="EscapeValueLabel" Content="data unavailable" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
+                <Label Grid.Row="4" Grid.Column="0" Name="EscapeLabel" Content="Escape velocity" FontSize="18" />
+                <Label Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Name="EscapeValueLabel" Content="data unavailable" FontSize="22" />
 
-                <Label Grid.Row="5" Grid.Column="0" Name="AccelerationLabel" Content="Acceleration of gravity" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
-                <Label Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Name="AccelerationValueLabel" Content="data unavailable" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
+                <Label Grid.Row="5" Grid.Column="0" Name="AccelerationLabel" Content="Acceleration of gravity" FontSize="18" />
+                <Label Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Name="AccelerationValueLabel" Content="data unavailable" FontSize="22" />
             </Grid>
 
         </Grid>
