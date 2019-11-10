@@ -23,12 +23,15 @@ namespace PlanetCalc.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowModel mainWindowModel;
+        private string dbPath;
         public MainWindow()
         {
-            DBConnection db = new DBConnection("PlanetsRepository.db");
+            dbPath = "PlanetsRepository.db";
+            DBConnection db = new DBConnection(dbPath);
 
             // MVVM stuff
-            MainWindowModel mainWindowModel = new MainWindowModel();
+            mainWindowModel = new MainWindowModel();
             mainWindowModel.LoadPlanets(ref db);
             
             InitializeComponent();
@@ -44,9 +47,33 @@ namespace PlanetCalc.View
         {
             Planet planet = (Planet)PlanetsList.SelectedItem;
 
-            CircularValueLabel.Content = planet.CircularVelocity + " KM/s";
-            EscapeValueLabel.Content = planet.EscapeVelocity + " KM/s";
-            AccelerationValueLabel.Content = planet.AccelerationOfGravity + " m/s^2";
+            if (planet != null)
+            {
+                CircularValueLabel.Content = planet.CircularVelocity + " KM/s";
+                EscapeValueLabel.Content = planet.EscapeVelocity + " KM/s";
+                AccelerationValueLabel.Content = planet.AccelerationOfGravity + " m/s^2";
+            }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddPlanetWindow addPlanetWindow = new AddPlanetWindow();
+            addPlanetWindow.Show();
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Planet planet = (Planet)PlanetsList.SelectedItem;
+
+            if (PlanetsList.SelectedIndex > 0)
+            {
+                PlanetsList.SelectedIndex = PlanetsList.SelectedIndex - 1;
+            }
+
+            mainWindowModel.Planets.Remove(planet);
+
+            DBConnection db = new DBConnection(dbPath);
+            db.RemovePlanet(planet);
         }
     }
 }

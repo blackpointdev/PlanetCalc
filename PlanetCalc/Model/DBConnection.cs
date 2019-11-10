@@ -33,5 +33,14 @@ namespace PlanetCalc.Model
                 return planets.FindAll().ToList();
             }
         }
+
+        public void RemovePlanet(Planet planet)
+        {
+            using (var db = new LiteDatabase(_path))
+            {
+                var planets = db.GetCollection<Planet>("planets");
+                planets.Delete(planet.Id);
+            }
+        }
     }
 }
