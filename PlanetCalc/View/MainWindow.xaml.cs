@@ -36,6 +36,8 @@ namespace PlanetCalc.View
             
             InitializeComponent();
 
+            Style = (Style)FindResource(typeof(Window));
+
             // Binding data to my view model
             //TODO Create separate UserControl for list and data display part.
             this.DataContext = mainWindowModel;

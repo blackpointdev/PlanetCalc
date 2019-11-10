@@ -26,6 +26,8 @@ namespace PlanetCalc.View
         public AddPlanetWindow(ref MainWindowModel viewModel)
         {
             InitializeComponent();
+
+            Style = (Style)FindResource(typeof(Window));
             mainWindowModel = viewModel;
         }
 
