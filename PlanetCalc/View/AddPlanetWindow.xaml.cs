@@ -27,7 +27,7 @@ namespace PlanetCalc.View
         {
             InitializeComponent();
 
-            Style = (Style)FindResource(typeof(Window));
+            // Style = (Style)FindResource(typeof(Window));
             mainWindowModel = viewModel;
         }
 

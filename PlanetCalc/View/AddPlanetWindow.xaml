@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlanetCalc.View"
         mc:Ignorable="d"
-        Title="Add planet" Height="210" Width="400" ResizeMode="NoResize" Topmost="True">
+        Style="{StaticResource WinMain}"
+        Title="Add planet" 
+        Height="210" Width="400" 
+        ResizeMode="NoResize" 
+        Topmost="True">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -31,8 +35,8 @@
         <Label Grid.Row="3" Grid.Column="1" FontSize="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Content="Inputs support scientific notation (i.e. 2,454E23 is valid)." />
 
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="10, 5, 10, 5" HorizontalAlignment="Right">
-            <Button Content="Cancel" Name="CancelButton" Width="85" Height="25" Margin="0, 0, 10, 0" Click="CancelButton_Click"/>
-            <Button Content="Ok" Name="OkButton" Width="85" Height="25" Click="OkButton_Click"/>
+            <Button Content="Cancel" Name="CancelButton" Margin="0, 0, 10, 0" Click="CancelButton_Click"/>
+            <Button Content="Ok" Name="OkButton" Click="OkButton_Click"/>
         </StackPanel>
 
     </Grid>

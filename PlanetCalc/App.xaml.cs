@@ -21,13 +21,13 @@ namespace PlanetCalc
             //    DefaultValue = FindResource(typeof(Window))
             //});
 
-            MainWindow mainWindow = new MainWindow();
-            if (e.Args.Length == 1)
-            {
-                MessageBox.Show("Custom path to dadatabe file was given: " + e.Args[0], "Warning");
-                //TODO Logic for custom database path
-            }
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //if (e.Args.Length == 1)
+            //{
+            //    MessageBox.Show("Custom path to dadatabe file was given: " + e.Args[0], "Warning");
+            //    //TODO Logic for custom database path
+            //}
+            //mainWindow.Show();
         }
     }
 }

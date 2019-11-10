@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="PlanetCalc" 
         Height="400" Width="800" 
-        MinWidth="630" MinHeight="400">
+        MinWidth="630" MinHeight="400"
+        Style="{StaticResource WinMain}">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -29,8 +30,8 @@
             </ListBox>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10, 0, 10, 0">
-                <Button Content="Add" Name="AddButton"  Width="85" Margin="0, 0, 10, 0" Height="25" Click="AddButton_Click"/>
-                <Button Content="Remove" Name="RemoveButton" Width="85" Height="25" Click="RemoveButton_Click"/>
+                <Button Content="Add" Name="AddButton" Margin="0, 0, 10, 0" Click="AddButton_Click"/>
+                <Button Content="Remove" Name="RemoveButton" Click="RemoveButton_Click"/>
             </StackPanel>
         </Grid>
 
