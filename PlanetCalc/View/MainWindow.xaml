@@ -21,7 +21,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <ListBox Grid.Column="0" Margin="10, 10, 10, 0" Name="PlanetsList" ItemsSource="{Binding Path=Planets}" SelectionChanged="PlanetsList_SelectionChanged">
+            <ListBox Grid.Column="0" Margin="10, 10, 10, 0" Name="PlanetsList" ItemsSource="{Binding Path=Planets}" SelectionChanged="PlanetsList_SelectionChanged" MouseDoubleClick="PlanetsList_MouseDoubleClick">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Path=Name}"/>

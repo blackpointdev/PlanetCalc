@@ -51,5 +51,14 @@ namespace PlanetCalc.Model
                 planets.Insert(planet);
             }
         }
+
+        public void UpdatePlanet(Planet planet)
+        {
+            using (var db = new LiteDatabase(@_path))
+            {
+                var planets = db.GetCollection<Planet>("planets");
+                planets.Update(planet);
+            }
+        }
     }
 }

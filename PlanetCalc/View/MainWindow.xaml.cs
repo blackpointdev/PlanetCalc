@@ -36,8 +36,6 @@ namespace PlanetCalc.View
             
             InitializeComponent();
 
-            // Style = (Style)FindResource(typeof(Window));
-
             // Binding data to my view model
             //TODO Create separate UserControl for list and data display part.
             this.DataContext = mainWindowModel;
@@ -76,6 +74,13 @@ namespace PlanetCalc.View
 
             DBConnection db = new DBConnection(mainWindowModel.Path);
             db.RemovePlanet(planet);
+        }
+
+        private void PlanetsList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Planet planet = (Planet)PlanetsList.SelectedItem;
+            EditPlanetWindow editPlanetWindow = new EditPlanetWindow(ref mainWindowModel, planet.Id);
+            editPlanetWindow.Show();
         }
     }
 }
