@@ -4,29 +4,14 @@ using System.ComponentModel;
 
 namespace PlanetCalc.ViewModel
 {
-    public class MainWindowModel : INotifyPropertyChanged
+    public class MainWindowModel
     {
         public string Path { get; set; }
-        private ObservableCollection<Planet> _planets;
-        public ObservableCollection<Planet> Planets
-        {
-            get { return _planets; }
-            set
-            {
-                _planets = value;
-                OnPropertyChanged("Planets");
-            }
-        }
+        public ObservableCollection<Planet> Planets { get; set; }
 
         public void LoadPlanets(ref DBConnection db)
         {
             Planets = new ObservableCollection<Planet>(db.FetchData());
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string property)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
     }
 }

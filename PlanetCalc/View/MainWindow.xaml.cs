@@ -78,6 +78,7 @@ namespace PlanetCalc.View
 
         private void PlanetsList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            Debug.WriteLine(mainWindowModel.Planets[0].Name);
             Planet planet = (Planet)PlanetsList.SelectedItem;
             EditPlanetWindow editPlanetWindow = new EditPlanetWindow(ref mainWindowModel, planet.Id);
             editPlanetWindow.Show();

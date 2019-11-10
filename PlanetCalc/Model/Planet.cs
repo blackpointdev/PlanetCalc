@@ -1,15 +1,61 @@
-﻿
-using System;
+﻿using System;
+using System.ComponentModel;
 
 namespace PlanetCalc.Model
 {
-    public class Planet
+    public class Planet : INotifyPropertyChanged
     {
         public int Id { get; private set; }
 
-        public string Name { get; set; }
-        public double Radius { get; set; }
-        public double Mass { get; set; }
+        private string _name;
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (_name != value)
+                {
+                    _name = value;
+                    OnPropertyChanged("Name");
+                }
+            }
+        }
+
+        private double _radius;
+        public double Radius
+        {
+            get
+            {
+                return _radius;
+            }
+            set
+            {
+                if (_radius != value)
+                {
+                    _radius = value;
+                    OnPropertyChanged("Radius");
+                }
+            }
+        }
+        private double _mass;
+        public double Mass
+        {
+            get
+            {
+                return _mass;
+            }
+            set
+            {
+                if (_mass != value)
+                {
+                    _mass = value;
+                    OnPropertyChanged("Mass");
+                }
+            }
+        }
 
 
         private double? _OrbitalVelocity = null;
@@ -78,6 +124,12 @@ namespace PlanetCalc.Model
         private double CalculateAccelerationOfGravity()
         {
             return Math.Round(_g * (Mass/((Radius*1000+100)* (Radius * 1000 + 100))), 3);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
     }
