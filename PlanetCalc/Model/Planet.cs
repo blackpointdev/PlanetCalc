@@ -12,16 +12,16 @@ namespace PlanetCalc.Model
         public double Mass { get; set; }
 
 
-        private double? _circularVelocity = null;
-        public double CircularVelocity
+        private double? _OrbitalVelocity = null;
+        public double OrbitalVelocity
         {
             get
             {
-                if (_circularVelocity == null)
+                if (_OrbitalVelocity == null)
                 {
-                    _circularVelocity = CalculateCircularVelocity();
+                    _OrbitalVelocity = CalculateOrbitalVelocity();
                 }
-                return (double)_circularVelocity;
+                return (double)_OrbitalVelocity;
             }
         }
 
@@ -65,14 +65,14 @@ namespace PlanetCalc.Model
             this.Mass = mass;
         }
 
-        private double CalculateCircularVelocity()
+        private double CalculateOrbitalVelocity()
         {
             return Math.Round(Math.Sqrt((_g * Mass)/(Radius*1000))/1000, 3);
         }
 
         private double CalculateEscapeVelocity()
         {
-            return Math.Round(Math.Sqrt(2)*CircularVelocity, 3);
+            return Math.Round(Math.Sqrt(2)*OrbitalVelocity, 3);
         }
 
         private double CalculateAccelerationOfGravity()

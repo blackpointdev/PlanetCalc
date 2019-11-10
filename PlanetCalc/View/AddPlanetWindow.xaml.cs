@@ -47,8 +47,7 @@ namespace PlanetCalc.View
             Planet planet = new Planet(name, radius, mass);
             mainWindowModel.Planets.Add(planet);
 
-            //TODO This db path passing is veery wrong.
-            DBConnection db = new DBConnection("PlanetsRepository.db");
+            DBConnection db = new DBConnection(mainWindowModel.Path);
             db.AddPlanet(planet);
 
             this.Close();

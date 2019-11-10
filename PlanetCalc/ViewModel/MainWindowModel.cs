@@ -6,6 +6,7 @@ namespace PlanetCalc.ViewModel
 {
     public class MainWindowModel : INotifyPropertyChanged
     {
+        public string Path { get; set; }
         private ObservableCollection<Planet> _planets;
         public ObservableCollection<Planet> Planets
         {

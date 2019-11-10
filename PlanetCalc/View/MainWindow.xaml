@@ -63,8 +63,8 @@
                 <Label Grid.Row="1" Grid.Column="0" Name="MassLabel" Content="Mass" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
                 <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Name="MassValueLabel" Content="{Binding SelectedItem.Mass, ElementName=PlanetsList}" ContentStringFormat=" {0} KG" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
                 
-                <Label Grid.Row="3" Grid.Column="0" Name="CircularLabel" Content="Circular velocity" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
-                <Label Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Name="CircularValueLabel" Content="data unavailable" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
+                <Label Grid.Row="3" Grid.Column="0" Name="OrbitalLabel" Content="Orbital velocity" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
+                <Label Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Name="OrbitalValueLabel" Content="data unavailable" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>
 
                 <Label Grid.Row="4" Grid.Column="0" Name="EscapeLabel" Content="Escape velocity" FontSize="18" FontFamily="Microsoft YaHei UI Light"/>
                 <Label Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Name="EscapeValueLabel" Content="data unavailable" FontSize="22" FontFamily="Microsoft YaHei UI Light"/>

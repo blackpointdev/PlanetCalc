@@ -24,14 +24,14 @@ namespace PlanetCalc.View
     public partial class MainWindow : Window
     {
         private MainWindowModel mainWindowModel;
-        private string dbPath;
         public MainWindow()
         {
-            dbPath = "PlanetsRepository.db";
-            DBConnection db = new DBConnection(dbPath);
+            mainWindowModel = new MainWindowModel();
+            mainWindowModel.Path = "PlanetsRepository.db";
+
+            DBConnection db = new DBConnection(mainWindowModel.Path);
 
             // MVVM stuff
-            mainWindowModel = new MainWindowModel();
             mainWindowModel.LoadPlanets(ref db);
             
             InitializeComponent();
@@ -49,7 +49,7 @@ namespace PlanetCalc.View
 
             if (planet != null)
             {
-                CircularValueLabel.Content = planet.CircularVelocity + " KM/s";
+                OrbitalValueLabel.Content = planet.OrbitalVelocity + " KM/s";
                 EscapeValueLabel.Content = planet.EscapeVelocity + " KM/s";
                 AccelerationValueLabel.Content = planet.AccelerationOfGravity + " m/s^2";
             }
@@ -72,7 +72,7 @@ namespace PlanetCalc.View
 
             mainWindowModel.Planets.Remove(planet);
 
-            DBConnection db = new DBConnection(dbPath);
+            DBConnection db = new DBConnection(mainWindowModel.Path);
             db.RemovePlanet(planet);
         }
     }
