@@ -1,0 +1,35 @@
+﻿<Window x:Class="PlanetCalc.View.AddPlanetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlanetCalc.View"
+        mc:Ignorable="d"
+        Title="Add planet" Height="200" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Content="Name" Margin="5" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="NameInput" Height="25" Margin="5" VerticalContentAlignment="Center"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Radius" Margin="5" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="RadiusInput" Height="25" Margin="5" VerticalContentAlignment="Center"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Mass" Margin="5" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="MassInput" Height="25" Margin="5" VerticalContentAlignment="Center"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+            <Button Content="Cancel" Name="CancelButton" Width="85" Margin="0, 0, 10, 0" Click="CancelButton_Click"/>
+            <Button Content="Ok" Name="OkButton" Width="85" Click="OkButton_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
