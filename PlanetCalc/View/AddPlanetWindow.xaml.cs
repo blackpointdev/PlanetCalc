@@ -40,9 +40,17 @@ namespace PlanetCalc.View
             double radius;
             double mass;
 
-            double.TryParse(RadiusInput.Text, out radius);
-            double.TryParse(MassInput.Text, out mass);
-            //TODO Data validation
+            if (!double.TryParse(RadiusInput.Text, out radius))
+            {
+                MessageBox.Show("Incorrect radius value.", "Error");
+                return;
+            }
+
+            if (!double.TryParse(MassInput.Text, out mass))
+            {
+                MessageBox.Show("Incorrect mass value.", "Error");
+                return;
+            }
 
             Planet planet = new Planet(name, radius, mass);
             mainWindowModel.Planets.Add(planet);
