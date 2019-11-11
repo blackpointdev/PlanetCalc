@@ -58,45 +58,53 @@ namespace PlanetCalc.Model
         }
 
 
-        private double? _OrbitalVelocity = null;
+        private double _orbitalVelocity = 0;
         public double OrbitalVelocity
         {
             get
             {
-                if (_OrbitalVelocity == null)
+                double tmp = _orbitalVelocity;
+                _orbitalVelocity = CalculateOrbitalVelocity();
+
+                if (_orbitalVelocity != tmp)
                 {
-                    _OrbitalVelocity = CalculateOrbitalVelocity();
                     OnPropertyChanged("OrbitalVelocity");
                 }
-                return (double)_OrbitalVelocity;
+                return _orbitalVelocity;
             }
         }
 
-        private double? _escapeVelocity = null;
+        private double _escapeVelocity;
         public double EscapeVelocity
         {
             get
             {
-                if (_escapeVelocity == null)
+                double tmp = _escapeVelocity;
+                _escapeVelocity = CalculateEscapeVelocity();
+                
+                if (_escapeVelocity != tmp)
                 {
-                    _escapeVelocity = CalculateEscapeVelocity();
                     OnPropertyChanged("EscapeVelocity");
                 }
-                return (double)_escapeVelocity;
+
+                return _escapeVelocity;
             }
         }
 
-        private double? _accelerationOfGravity = null;
+        private double _accelerationOfGravity = 0;
         public double AccelerationOfGravity
         {
             get
             {
-                if (_accelerationOfGravity == null)
+                double tmp = _accelerationOfGravity;
+                _accelerationOfGravity = CalculateAccelerationOfGravity();
+
+                if (_accelerationOfGravity != tmp)
                 {
-                    _accelerationOfGravity = CalculateAccelerationOfGravity();
                     OnPropertyChanged("AccelerationOfGravity");
                 }
-                return (double)_accelerationOfGravity;
+
+                return _accelerationOfGravity;
             }
         }
 
@@ -116,17 +124,17 @@ namespace PlanetCalc.Model
 
         private double CalculateOrbitalVelocity()
         {
-            return Math.Round(Math.Sqrt((_g * Mass)/(Radius*1000))/1000, 3);
+            return Math.Round(Math.Sqrt((_g * Mass) / (Radius * 1000)) / 1000, 3);
         }
 
         private double CalculateEscapeVelocity()
         {
-            return Math.Round(Math.Sqrt(2)*OrbitalVelocity, 3);
+            return Math.Round(Math.Sqrt(2) * OrbitalVelocity, 3);
         }
 
         private double CalculateAccelerationOfGravity()
         {
-            return Math.Round(_g * (Mass/((Radius*1000+100)* (Radius * 1000 + 100))), 3);
+            return Math.Round(_g * (Mass / ((Radius * 1000 + 100) * (Radius * 1000 + 100))), 3);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
