@@ -43,18 +43,6 @@ namespace PlanetCalc.View
             PlanetsList.SelectedIndex = 0;
         }
 
-        private void PlanetsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Planet planet = (Planet)PlanetsList.SelectedItem;
-
-            if (planet != null)
-            {
-                OrbitalValueLabel.Content = planet.OrbitalVelocity + " KM/s";
-                EscapeValueLabel.Content = planet.EscapeVelocity + " KM/s";
-                AccelerationValueLabel.Content = planet.AccelerationOfGravity + " m/s^2";
-            }
-        }
-
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             AddPlanetWindow addPlanetWindow = new AddPlanetWindow(ref mainWindowModel);

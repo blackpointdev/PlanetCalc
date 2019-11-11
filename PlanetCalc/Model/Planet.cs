@@ -66,6 +66,7 @@ namespace PlanetCalc.Model
                 if (_OrbitalVelocity == null)
                 {
                     _OrbitalVelocity = CalculateOrbitalVelocity();
+                    OnPropertyChanged("OrbitalVelocity");
                 }
                 return (double)_OrbitalVelocity;
             }
@@ -79,6 +80,7 @@ namespace PlanetCalc.Model
                 if (_escapeVelocity == null)
                 {
                     _escapeVelocity = CalculateEscapeVelocity();
+                    OnPropertyChanged("EscapeVelocity");
                 }
                 return (double)_escapeVelocity;
             }
@@ -92,6 +94,7 @@ namespace PlanetCalc.Model
                 if (_accelerationOfGravity == null)
                 {
                     _accelerationOfGravity = CalculateAccelerationOfGravity();
+                    OnPropertyChanged("AccelerationOfGravity");
                 }
                 return (double)_accelerationOfGravity;
             }
