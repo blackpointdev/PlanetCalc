@@ -122,17 +122,17 @@ namespace PlanetCalc.Model
             this.Mass = mass;
         }
 
-        private double CalculateOrbitalVelocity()
+        public double CalculateOrbitalVelocity()
         {
             return Math.Round(Math.Sqrt((_g * Mass) / (Radius * 1000)) / 1000, 3);
         }
 
-        private double CalculateEscapeVelocity()
+        public double CalculateEscapeVelocity()
         {
             return Math.Round(Math.Sqrt(2) * OrbitalVelocity, 3);
         }
 
-        private double CalculateAccelerationOfGravity()
+        public double CalculateAccelerationOfGravity()
         {
             return Math.Round(_g * (Mass / ((Radius * 1000 + 100) * (Radius * 1000 + 100))), 3);
         }
